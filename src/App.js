@@ -3,19 +3,24 @@ import BannerSlide from "./Components/BannerSlide";
 import Cart from "./Components/Cart";
 import Footer from "./Components/Footer";
 import Cards from "./Components/ProductCards";
-import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Router>
-        <BannerSlide />
-
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Cards />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
+          <Route
+            path="/"
+            element={
+              <>
+                <BannerSlide /> <Cards />
+              </>
+            }
+          />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
       <Footer />
     </>
   );
