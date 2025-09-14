@@ -4,7 +4,7 @@ import card1 from "../assets/battery1.jpg";
 import card2 from "../assets/battery2.webp";
 import card3 from "../assets/battery3.jpeg";
 
-export default function ProductCards() {
+export default function ProductCards(props) {
   const productsList = [
     {
       id: 1,
@@ -110,9 +110,13 @@ export default function ProductCards() {
               <div className="card-section2">
                 <p className="card-section2-content1">${item.name}</p>
                 <p className="card-section2-content3">PKR ${item.price}</p>
-                <a href="/" data-id={item.id} className="card-section2-btn">
+                <div
+                  data-id={item.id}
+                  onClick={props.updateCount}
+                  className="card-section2-btn"
+                >
                   Add to cart
-                </a>
+                </div>
               </div>
             </div>
           ))}

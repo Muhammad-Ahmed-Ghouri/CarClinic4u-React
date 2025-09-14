@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 
 export default function ProductList() {
   return (
@@ -68,9 +69,9 @@ export default function ProductList() {
           </div>
         </div>
         <div className="addCarts">
-          <a className="addCarts-text" href="/index.html#shopping-cards">
+          <HashLink className="addCarts-text" smooth to="/#shopping-cards">
             Add Product
-          </a>
+          </HashLink>
         </div>
         <div className="no-cards">
           <h3 className="no-cards-heading">No items in your cart.</h3>

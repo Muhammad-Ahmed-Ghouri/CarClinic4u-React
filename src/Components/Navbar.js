@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import observer from "./Animate";
-import logo from "../assets/logo.png";
+import logo from "../assets/white-logo.png";
 import hamburger from "../assets/hamburger.png";
 import cart from "../assets/cart-icon.png";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ export default function Navbar(props) {
   }, []);
   return (
     <>
-      <div className={`navbar-container ${props.className}`}>
+      <div className="navbar-container">
         <nav id="navbar">
           <div className="logo">
             <div
@@ -76,7 +76,7 @@ export default function Navbar(props) {
           </ul>
           <div>
             <Link to="/cart" className="cart-icon-container-small-screen">
-              <span className="item-count">2</span>
+              <span className="item-count">{props.count}</span>
               <img className="cart-icon" src={cart} alt="" />
             </Link>
           </div>
@@ -110,7 +110,12 @@ export default function Navbar(props) {
         </div>
 
         <Link to="/cart" className="cart-icon-container">
-          <span className="item-count"></span>
+          <span
+            className="item-count"
+            style={{ visibility: `${props.visibility}` }}
+          >
+            {props.count}
+          </span>
           <img className="cart-icon" src={cart} alt="" />
         </Link>
       </div>

@@ -6,8 +6,6 @@ import Navbar from "./Navbar";
 export default function Cart() {
   return (
     <>
-      <Navbar className="nav-container" />
-
       <div className="banner">
         <h1 className="banner-content scaleAnimation">CART SUMMARY</h1>
       </div>
