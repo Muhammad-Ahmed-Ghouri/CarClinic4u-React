@@ -1,9 +1,7 @@
-import React from "react";
 import ProductList from "./ProductList";
 import CartSummary from "./CartSummary";
-import Navbar from "./Navbar";
 
-export default function Cart() {
+export default function Cart(props) {
   return (
     <>
       <div className="banner">
@@ -13,7 +11,7 @@ export default function Cart() {
       <div className="cart-summary">
         <p className="items-count-text"></p>
         <div className="carts-section">
-          <ProductList />
+          <ProductList selectedProducts={props.selectedProducts} />
           <CartSummary />
         </div>
       </div>

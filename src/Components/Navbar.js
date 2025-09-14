@@ -112,7 +112,7 @@ export default function Navbar(props) {
         <Link to="/cart" className="cart-icon-container">
           <span
             className="item-count"
-            style={{ visibility: `${props.visibility}` }}
+            // style={{ visibility: `${props.visibility}` }}
           >
             {props.count}
           </span>
