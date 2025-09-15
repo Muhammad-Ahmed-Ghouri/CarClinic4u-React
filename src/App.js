@@ -127,6 +127,41 @@ function App() {
     // }, 3000);
   }
 
+  const removeProduct = (id) => {
+    const updatedProducts = selectedProducts.filter(
+      (product) => product.id !== id
+    );
+    setSelectedProducts(updatedProducts); // this re-renders ProductList
+    localStorage.setItem("cart", JSON.stringify(updatedProducts));
+
+    //   itemsCountTextUpdate(selectedProducts.length);
+
+    // itemCount(selectedProducts.length);
+
+    // localStorage.setItem("cart", JSON.stringify(selectedProducts));
+    // cartSummary(selectedProducts);
+
+    // localStorage.setItem("orderSummary", JSON.stringify(payLoad));
+  };
+
+  const deleteProduct = (productId) => {
+    removeProduct(productId);
+
+    // if (selectedProducts.length === 0) {
+    //   emptyCart.style.display = "flex";
+    // }
+
+    // if (selectedProducts.length != 0) {
+    //   checkoutButton.style.pointerEvents = "auto";
+    //   checkoutButton.style.cursor = "pointer";
+    //   checkoutButton.style.backgroundColor = "#2e72cc";
+    // } else {
+    //   checkoutButton.style.pointerEvents = "none";
+    //   checkoutButton.style.cursor = "none";
+    //   checkoutButton.style.backgroundColor = "#cbcbcb";
+    // }
+  };
+
   useEffect(() => {
     console.log(selectedProducts);
     localStorage.setItem("cart", JSON.stringify(selectedProducts));
@@ -150,7 +185,12 @@ function App() {
           />
           <Route
             path="/cart"
-            element={<Cart selectedProducts={selectedProducts} />}
+            element={
+              <Cart
+                selectedProducts={selectedProducts}
+                deleteProduct={deleteProduct}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>

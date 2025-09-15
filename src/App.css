@@ -133,7 +133,7 @@ body a {
   display: inline-block;
   width: 0;
   height: 2px;
-  background-color: var(--goldenYello-color);
+  background-color: var(--secondary2-color);
   transition: all 0.3s ease;
   margin-top: 2px;
 }

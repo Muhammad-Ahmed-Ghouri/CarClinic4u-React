@@ -11,8 +11,11 @@ export default function Cart(props) {
       <div className="cart-summary">
         <p className="items-count-text"></p>
         <div className="carts-section">
-          <ProductList selectedProducts={props.selectedProducts} />
-          <CartSummary />
+          <ProductList
+            deleteProduct={props.deleteProduct}
+            selectedProducts={props.selectedProducts}
+          />
+          <CartSummary selectedProducts={props.selectedProducts} />
         </div>
       </div>
     </>

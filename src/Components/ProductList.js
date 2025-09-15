@@ -10,7 +10,7 @@ export default function ProductList(props) {
         <div className="cart-content-1 cartid">
           {props.selectedProducts.map((product) => {
             return (
-              <div className="cart">
+              <div key={product.id} className="cart">
                 <div className="cart-image">
                   <img src={product.image} alt="" className="product-image" />
                 </div>
@@ -18,12 +18,13 @@ export default function ProductList(props) {
                 <div className="cart-content">
                   <div className="cart-content1">
                     <div className="cart-content1-text">
-                      <p className="name-text">${product.name}</p>
-                      <p className="price-text">PKR ${product.price}</p>
+                      <p className="name-text">{product.name}</p>
+                      <p className="price-text">PKR {product.price}</p>
                     </div>
                     <button
                       data-id={product.id}
                       className="cart-content1-button"
+                      onClick={() => props.deleteProduct(product.id)}
                     >
                       <img src={trashBin} alt="" className="button-icon" />
                       <p className="button-text">DELETE</p>
